@@ -25,4 +25,12 @@ describe(Task) do
     end
   end
 
+  describe('.clear') do
+    it('clears all saved tasks') do
+      Task.new('reticluate the spines').save()
+      Task.clear()
+      expect(Task.all()).to(eq([]))
+    end
+  end
+
 end
